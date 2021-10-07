@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas PPM 2</title>
+    <link rel="stylesheet" href="display.css">
+    <script>
+         //Arrow function dan penggunaan variabel const
+  const Tarif = () => {
+    // penggunaan variabel let
+   let umur = document.getElementById('umur').value;
+   let tinggi = document.getElementById('tinggi').value;
+
+   //percabangan dengan if else dan penggunaan template literal
+   if(umur === ""){
+       return alert('Anda belum memasukan umur dan tinggi')
+   }else {
+       if(umur < 1 && tinggi < 70) {
+           return alert('Dilarang Masuk')
+       }else if(umur >= 1 && umur <= 3 && tinggi < 70) {
+           return alert(`Tarif Anda Rp. ${30000}`);
+       }else if(umur >= 2 && umur <= 3 && tinggi > 70) {
+           //penggunaan template literal
+           return alert(`Tarif Anda Rp. ${30000} + Rp. ${10000} = Rp. ${30000 + 10000}`)
+       }else if(umur < 7 && tinggi < 120) {
+           return alert(`Tarif Anda Rp. ${40000}`)
+       }else if(umur >= 4 && umur <= 7 && tinggi > 120) {
+           return alert(`Tarif Anda Rp. ${40000} + Rp. ${15000} = Rp. ${40000 + 15000}`)
+       }else if(umur < 10 && tinggi < 150) {
+           return alert(`Tarif Anda Rp. ${50000}`)
+       }else if(umur >= 8 && umur <= 10 && tinggi > 150) {
+           return alert(`Tarif Anda Rp. ${50000} + Rp. ${20000} = Rp. ${50000 + 20000}`)
+       }else {
+           return alert(`Tarif Anda Rp. ${80000}`)
+       }   
+   }
+   document.getElementById("result").innerHTML = umur;
+   document.getElementById("result").innerHTML = tinggi;
+}
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="judul">
+                <h3>
+                    Tarif Disney Island
+                </h3>
+            </div>
+            <div class="content">
+                    <form>
+                        <tr>
+                            <td>
+                                <p>
+                                    Umur:
+                                </p>
+                                <input type="text" id="umur" placeholder="Masukkan Umur">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>
+                                    Tinggi:
+                                </p>
+                                <input type="text" id="tinggi" placeholder="Masukkan Tinggi">
+                            </td>
+                        </tr>
+                    </form>
+            </div>
+            <input type="button" onclick="Tarif()" value="CEK">
+        </div>
+    </div>
+    
+</body>
+</html>
